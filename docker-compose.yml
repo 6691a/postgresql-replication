@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  master:
+    build:
+      context: .
+      dockerfile: dockerfile.master
+
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: 123
+      REPLICA_USER: replica
+      REPLICA_USER_PASSWORD: 123
+    ports:
+      - "5432:5432"
