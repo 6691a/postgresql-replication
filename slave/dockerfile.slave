@@ -1,0 +1,7 @@
+FROM postgres
+
+ENV LANG C.UTF-8
+
+COPY ./slave.sh  /docker-entrypoint-initdb.d/slave.sh
+RUN chmod 0666 /docker-entrypoint-initdb.d/slave.sh
+
